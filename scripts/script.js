@@ -8,7 +8,7 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVYXYZ";
 var numerals = "1234567890";
 var special = " !#$%&()*+,-./:;<=>?@[]^_`{|}~";
 
-//Variable length between range of 9 and 128
+//Variable length set between range of 9 and 128
 var length = Math.round(Math.random() * (128 - 8) + 8);
 
 //Generated password
