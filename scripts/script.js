@@ -2,10 +2,13 @@
 // The user has to select at least one of four password criteria options in order for the password to generate.
 
 //Possible password values
-var specialCharacters = " !#$%&()*+,-./:;<=>?@[]^_`{|}~";
+var special = " !#$%&()*+,-./:;<=>?@[]^_`{|}~";
 var numerals = "1234567890";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVYXYZ";
+
+//Undefined length variable
+var length = [from 8, to 128];
 
 //Generated password
 var password = "";
