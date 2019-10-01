@@ -10,11 +10,20 @@ var special = " !#$%&()*+,-./:;<=>?@[]^_`{|}~";
 
 //Variable length set between range of 9 and 128
 var length = Math.round(Math.random() * (128 - 8) + 8);
+console.log(length);
 
 //Generated password
 var password = "";
 
 // User selects criteria, at least one, for password
+
+function generatePassword() {
+    for (var i = 0; x < )
+
+
+
+
+}
 
 //Use conditionals to run through possible user combinations for the password
 
