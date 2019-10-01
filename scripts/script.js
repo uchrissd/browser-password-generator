@@ -2,19 +2,22 @@
 // The user has to select at least one of four password criteria options in order for the password to generate.
 
 //Possible password values
-var special = " !#$%&()*+,-./:;<=>?@[]^_`{|}~";
-var numerals = "1234567890";
+
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVYXYZ";
+var numerals = "1234567890";
+var special = " !#$%&()*+,-./:;<=>?@[]^_`{|}~";
 
-//Undefined length variable
-var length = [from 8, to 128];
+//Variable length between range of 9 and 128
+var length = Math.round(Math.random() * (128 - 8) + 8);
 
 //Generated password
 var password = "";
 
-//Create a fucntion that sets total character limit for the pasword
+// User selects criteria, at least one, for password
 
 //Use conditionals to run through possible user combinations for the password
 
 //Run a loop to determine the undefined password variable
+
+//Copy password to clipoard
