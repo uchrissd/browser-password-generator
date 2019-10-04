@@ -1,41 +1,81 @@
 // This JavaScript program is designed to generate a password for a user and then allow them to copy the generated password to their clipboard.
 // The user has to select at least one of four password criteria options in order for the password to generate.
+var generateEl = document.getElementById("generate");
+
+generateEl.addEventListener("click", function(event) {
+  // event.preventDefault prevents the page from reloading on submit
+
+  event.preventDefault();
+
+  setUpPassWord();
+});
+
+let passwordCharacters = [
+  {
+    description: "Enable lower case characters",
+    chars: "abcdefghijklmonpqrstuvwxyz"
+  },
+  {
+    description: "Enable uppercase characters",
+    chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  {
+    description: "Enable numbers",
+    chars: "0123456789"
+  },
+  {
+    description: "Enable special characters",
+    chars: ".!@#$%^&*()_+-="
+  }
+];
+
+function setUpPassWord() {
+  let validPasswordCharacters = "";
+  for (let i = 0; i < passwordCharacters.length; ++i) {
+    const passSetting = passwordCharacters[i];
+    const answer = confirm(passSetting.description);
+    if (answer) {
+      validPasswordCharacters += passSetting.chars;
+    }
+  }
+  console.log(validPasswordCharacters);
+}
 
 //Possible password values
-var passwordCharacters = {
-  lowerCase: "abcdefghijklmnopqrstuvwxyz",
-  upperCase: "ABCDEFGHIJKLMNOPQRSTUVYXYZ",
-  numerals: "1234567890",
-  special: "!#$%&()*+,-./:;<=>?@[]^_`{|}~ "
-};
+// var passwordCharacters = {
+//   lowerCase: "abcdefghijklmnopqrstuvwxyz",
+//   upperCase: "ABCDEFGHIJKLMNOPQRSTUVYXYZ",
+//   numerals: "1234567890",
+//   special: "!#$%&()*+,-./:;<=>?@[]^_`{|}~ "
+// };
 
-console.log(
-  "special character string length: ",
-  possiblePassVals.special.length
-);
+// console.log(
+//   "special character string length: ",
+//   possiblePassVals.special.length
+// );
 
 //This function sets the password length required to be between 8 and 128
 
-function isValidPasswordLength(passwordLength) {
-  return (
-    isNaN(passwordLength) === false &&
-    passwordLength > 8 &&
-    passwordLength < 128
-  );
-}
+// function isValidPasswordLength(passwordLength) {
+//   return (
+//     isNaN(passwordLength) === false &&
+//     passwordLength > 8 &&
+//     passwordLength < 128
+//   );
+// }
 
 //This function validates the password length and prompts the user to enter a desired length
 //Between 8 and 128
 
-function getPasswordLength() {
-  let passwordLength = 0;
-  let question = "Password length? Valid values are between 8 and 128.";
-  while (isValidPasswordLength(passwordLength) === false) {
-    passwordLength = parseInt(prompt(question));
-    question = "Uh oh! Try again.";
-  }
-  return passwordLength;
-}
+// function getPasswordLength() {
+//   let passwordLength = 0;
+//   let question = "Password length? Valid values are between 8 and 128.";
+//   while (isValidPasswordLength(passwordLength) === false) {
+//     passwordLength = parseInt(prompt(question));
+//     question = "Uh oh! Try again.";
+//   }
+//   return passwordLength;
+// }
 
 //Propt user with password generator alert window
 //Prompt user to declare a password length between 8 and 128 characters
