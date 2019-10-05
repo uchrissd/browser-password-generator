@@ -24,19 +24,21 @@
           <div class="w-100 p-3 h-100">
             <h2>Generate a Password</h2>
             <textarea
-              class="w-75 h-75 border border-danger text-center margin-top-25"
+              class="w-100 h-75 border border-danger text-center margin-top-25"
               readonly
               id="password"
               placeholder="Your Secure Password"
               aria-label="Generated Password"
             ></textarea>
             <hr />
-            <button id="generate" class="btn btn-danger">
-              Generate Password
-            </button>
-            <button id="copy" class="btn btn-secondary">
-              Copy to Clipboard
-            </button>
+            <div class="d-flex justify-content-between">
+              <button id="generate" class="btn btn-danger">
+                Generate Password
+              </button>
+              <button id="copy" class="btn btn-secondary">
+                Copy to Clipboard
+              </button>
+            </div>
           </div>
         </div>
       </div>
