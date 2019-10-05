@@ -1,10 +1,16 @@
-// This JavaScript program is designed to generate a password for a user and then allow them to copy the generated password to their clipboard.
-// The user has to select at least one of four password criteria options in order for the password to generate.
+//This program is a password generator. User confirms which criteria they want to include in the password though a series of prompts.
+//Program sets lowercase letters as the default in the event a user declines all of the criteria confirmation prompts.
+//The user then chooses a number between 8 and 128 for the length of the password.
+//After they hit the "generate" button, the password appears in the text-area.
+//The "copy to clipboard" button copies the generated password to the clipboard.
 
+//User hits the "generate" button and initiates the program.
 var generateEl = document.getElementById("generate");
 
 generateEl.addEventListener("click", function(event) {
   event.preventDefault();
+
+  //Constan variables for containing necessary password information for later password generation.
 
   const validPasswordCharacters = setUpPassWordCharacters();
   const passwordLength = getPasswordLength();
@@ -12,23 +18,24 @@ generateEl.addEventListener("click", function(event) {
   const passwordEl = document.getElementById("password");
 
   passwordEl.value = password;
-
+  //Console logs for debugging the variable values throughout the development process.
   console.log(validPasswordCharacters);
   console.log(passwordLength);
   console.log(password);
 });
 
+//The keys in this object contain the possible character passwords that can be used in the password.
 let passwordCharacters = [
   {
-    description: "Enable uppercase characters",
+    description: "Do you want uppder case letters in your password?",
     chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   },
   {
-    description: "Enable numbers",
+    description: "Do you want numbers in your password?",
     chars: "0123456789"
   },
   {
-    description: "Enable special characters",
+    description: "Do you want special characters in your password?",
     chars: ".!@#$%^&*()_+-="
   }
 ];
