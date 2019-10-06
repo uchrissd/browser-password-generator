@@ -2,7 +2,7 @@
 
 **Motivation**
 
-This is a password generator that I built for a project in the UCSD web development bootcamp program. The goal of the password generator is to give a user the options to choose which characters they would like to include in their password, like numbers, uppercase letters or special characters, as well as the length of the password. The user can then copy the newly generated password to their clipboard. The application runs on JavaScript and uses Bootstrap to provide styling and responsiveness.
+This is a password generator that I built for a project in the UCSD web development bootcamp program. The goal of the password generator is to give a user the option to choose which characters they would like to include in their password, such as numbers, uppercase letters or special characters, as well as the length of the password. The user can then copy the newly generated password to their clipboard. The application runs on JavaScript and uses Bootstrap to provide styling and responsiveness.
 
 **Build status**
 
