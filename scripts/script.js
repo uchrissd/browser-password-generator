@@ -24,7 +24,7 @@ generateEl.addEventListener("click", function(event) {
   console.log(password);
 });
 
-//The keys in this object contain the possible character passwords that can be used in the password.
+//The keys in this object contain the possible characters that can be used in the password.
 let passwordCharacters = [
   {
     description: "Do you want uppder case letters in your password?",
@@ -40,6 +40,7 @@ let passwordCharacters = [
   }
 ];
 
+//This function sets lower case letters as the default for the passowrd and then adds any additional characters based on the user choices.
 function setUpPassWordCharacters() {
   let validPasswordCharacters = "abcdefghijklmonpqrstuvwxyz";
   for (let i = 0; i < passwordCharacters.length; ++i) {
@@ -52,6 +53,7 @@ function setUpPassWordCharacters() {
   return validPasswordCharacters;
 }
 
+//This function confirms that the length of the password is between the required 8 and 128 characters.
 function isValidPasswordLength(passwordLength) {
   return (
     isNaN(passwordLength) === false &&
@@ -60,16 +62,19 @@ function isValidPasswordLength(passwordLength) {
   );
 }
 
+//This function prompts the user to choose how long they want their password to be.
 function getPasswordLength() {
   let passwordLength = 0;
-  let question = "Password length? Valid values are between 8 and 128.";
+  let question =
+    "How long do you want your password to be? Choose a number between 8 and 128.";
   while (isValidPasswordLength(passwordLength) === false) {
     passwordLength = parseInt(prompt(question));
-    question = "Uh oh! Try again.";
+    question = "Uh oh! Choose a number between 8 and 128.";
   }
   return passwordLength;
 }
 
+//This function generates the password once the user criteria has been met.
 function generatePassword(validPasswordCharacters, passwordLength) {
   let password = "";
   for (let i = 0; i < passwordLength; ++i) {
@@ -81,6 +86,7 @@ function generatePassword(validPasswordCharacters, passwordLength) {
   return password;
 }
 
+//This function allows the user to copy their generated password to the clipboard.
 function copy() {
   var copyText = document.querySelector("#password");
   copyText.select();
