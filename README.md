@@ -14,26 +14,31 @@ The application uses standard HTML markup style and Bootstrap CSS for styling an
 
 **Screenshots**
 
-Here are two screenshots of the application. One is a mobile version, the other is a web version.
-Web application:
+Here are two screenshots of the application.
+
+_Web version_
+
 ![Web application screenshot](assets/images/password-generator-full-screenshot.jpg)
 
-Mobile application screenshot:
+_Mobile version_
+
 ![Mobile application screenshot](assets/images/password-generator-mobile-screenshot.jpg)
 
 **Code Example**
 
+```javascript
 //This function generates the password once the user criteria has been met.
-// function generatePassword(validPasswordCharacters, passwordLength) {
-// let password = "";
-// for (let i = 0; i < passwordLength; ++i) {
-// password +=
-// validPasswordCharacters[
-// Math.floor(Math.random() * validPasswordCharacters.length)
-// ];
-// }
-// return password;
-// }
+function generatePassword(validPasswordCharacters, passwordLength) {
+  let password = "";
+  for (let i = 0; i < passwordLength; ++i) {
+    password +=
+      validPasswordCharacters[
+        Math.floor(Math.random() * validPasswordCharacters.length)
+      ];
+  }
+  return password;
+}
+```
 
 **Installation**
 
